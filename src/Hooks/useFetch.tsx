@@ -1,16 +1,6 @@
 import React from "react";
-import { useState, useEffect } from "react";
 
-interface FetchState<T> {
-  data: T | null;
-  loading: boolean;
-  error: string | null;
-}
-
-function useFetch<T>(
-  url: RequestInfo | URL,
-  options?: RequestInit
-): FetchState<T> {
+function useFetch<T>(url: RequestInfo | URL, options?: RequestInit) {
   const [loading, setLoading] = React.useState(false);
   const [data, setData] = React.useState<T | null>(null);
   const [error, setError] = React.useState<string | null>(null);
@@ -18,7 +8,7 @@ function useFetch<T>(
   const optionsRef = React.useRef(options);
   optionsRef.current = options;
 
-  useEffect(() => {
+  React.useEffect(() => {
     const controller = new AbortController();
     async function fetchData() {
       try {
