@@ -1,7 +1,45 @@
 import React from "react";
+import { useData } from "../Context/DataContext";
 
 const Resume = () => {
-  return <div>Resume</div>;
+  const { data } = useData();
+
+  if (data === null) return null;
+  return (
+    <section>
+      <div className="resumo flex mb">
+        <div className="box">
+          <h2>Vendas</h2>
+          <span>
+            {data
+              .reduce((acc, item) => acc + item.preco, 0)
+              .toLocaleString("pt-br", { style: "currency", currency: "BRL" })}
+          </span>
+        </div>
+        <div className="box">
+          <h2>Recebidos</h2>
+          <span>
+            {data
+              .filter((item) => item.status === "pago")
+              .reduce((acc, item) => acc + item.preco, 0)
+              .toLocaleString("pt-br", { style: "currency", currency: "BRL" })}
+          </span>
+        </div>
+        <div className="box">
+          <h2>Processando</h2>
+          <span>
+            {data
+              .filter((item) => item.status === "processando")
+              .reduce((acc, item) => acc + item.preco, 0)
+              .toLocaleString("pt-br", { style: "currency", currency: "BRL" })}
+          </span>
+        </div>
+      </div>
+      <div className="box mb">
+        <h2>Gráficos</h2>
+      </div>
+    </section>
+  );
 };
 
 export default Resume;

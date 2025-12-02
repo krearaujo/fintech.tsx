@@ -56,3 +56,31 @@ ul {
   padding: var(--gap);
   gap: var(--gap);
 }
+
+.resumo {
+  font-size: 1.5rem;
+  font-weight: 600;
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: var(--gap);
+    color: var(--color-1);
+  }
+}
+
+.sell {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  gap: var(--gap);
+  margin-bottom: var(--gap-s);
+  align-items: center;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+.sell div:last-child {
+  justify-self: end;
+}
