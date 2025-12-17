@@ -1,14 +1,14 @@
 import type { IVenda } from "../Context/DataContext";
 
-const SellItem = ({ sell }: { sell: IVenda }) => {
+const SaleItem = ({ sale }: { sale: IVenda }) => {
   return (
-    <div className="sell box">
+    <div className="sale box">
       <a href="" style={{ fontFamily: "monospace" }}>
-        {sell.id}
+        {sale.id}
       </a>
-      <div>{sell.nome}</div>
+      <div>{sale.nome}</div>
       <div>
-        {sell.preco.toLocaleString("pt-br", {
+        {sale.preco.toLocaleString("pt-br", {
           style: "currency",
           currency: "BRL",
         })}
@@ -17,4 +17,4 @@ const SellItem = ({ sell }: { sell: IVenda }) => {
   );
 };
 
-export default SellItem;
+export default SaleItem;

@@ -101,7 +101,7 @@ ul {
   gap: var(--gap);
 }
 
-.sell {
+.sale {
   display: grid;
   grid-template-columns: auto auto 1fr;
   gap: var(--gap);
@@ -114,6 +114,6 @@ ul {
   }
 }
 
-.sell div:last-child {
+.sale div:last-child {
   justify-self: end;
 }
