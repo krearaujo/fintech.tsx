@@ -22,7 +22,7 @@ function formatDate(date: Date) {
   const dd = String(date.getDate()).padStart(2, "0");
   const mm = String(date.getMonth() + 1).padStart(2, "0");
   const yy = date.getFullYear();
-  return `${dd}/${mm}/${yy}`;
+  return `${yy}-${mm}-${dd}`;
 }
 
 const MonthBtn = ({ n }: { n: number }) => {

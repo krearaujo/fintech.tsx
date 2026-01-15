@@ -6,6 +6,7 @@ const Months = () => {
       <MonthBtn n={0} />
       <MonthBtn n={-1} />
       <MonthBtn n={-2} />
+      <MonthBtn n={-3} />
     </div>
   );
 };

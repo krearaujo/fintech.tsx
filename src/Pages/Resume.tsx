@@ -1,10 +1,11 @@
-import React from "react";
 import { useData } from "../Context/DataContext";
+import Graphic from "../Components/Graphic";
 
 const Resume = () => {
   const { data } = useData();
 
   if (data === null) return null;
+
   return (
     <section>
       <div className="resumo flex mb">
@@ -36,7 +37,7 @@ const Resume = () => {
         </div>
       </div>
       <div className="box mb">
-        <h2>Gráficos</h2>
+        <Graphic data={data} />
       </div>
     </section>
   );
